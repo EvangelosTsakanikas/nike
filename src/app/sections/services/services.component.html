@@ -1,0 +1,5 @@
+<section class="max-container flex flex-wrap justify-center gap-9">
+	@for (service of services; track service.label) {
+		<app-service-card [imgURL]="service.imgURL" [label]="service.label" [subtext]="service.subtext"/>
+	}
+</section>

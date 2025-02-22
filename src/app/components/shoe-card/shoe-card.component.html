@@ -1,0 +1,21 @@
+<div
+	class="cursor-pointer rounded-xl border-2 max-sm:flex-1"
+	[ngClass]="
+		thumbnail() === currentBigShoeImage()
+			? 'border-red-400'
+			: 'border-transparent'
+	"
+	(click)="changeBigShoeImage()"
+>
+	<div
+		class="flex items-center justify-center rounded-xl bg-slate-400 bg-cover bg-center max-sm:p-4 sm:h-40 sm:w-40"
+	>
+		<img
+			[src]="thumbnail()"
+			alt="shoe collection"
+			width="127"
+			height="103"
+			class="object-contain"
+		/>
+	</div>
+</div>

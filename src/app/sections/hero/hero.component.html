@@ -1,0 +1,63 @@
+<section
+	id="home"
+	class="max-container flex min-h-screen w-full flex-col justify-center gap-10 xl:flex-row"
+>
+	<div
+		class="relative flex w-full flex-col items-start justify-center pt-28 max-xl:padding-x xl:w-2/5"
+	>
+		<p class="font-[montserrat] text-xl text-red-400">Our Summer Collections</p>
+		<h1
+			class="mt-10 font-[palanquin] text-8xl font-bold max-sm:text-[72px] max-sm:leading-[82px]"
+		>
+			<span class="relative z-10 pr-10 xl:bg-white xl:whitespace-nowrap"
+				>The New Arrival
+			</span>
+			<br />
+			<span class="mt-5 inline-block text-red-400">Nike</span>
+			Shoes
+		</h1>
+		<p
+			class="mt-6 mb-14 font-[montserrat] text-lg leading-8 text-gray-500 sm:max-w-sm"
+		>
+			Discover stylish Nike arrivals, quality comfort, and innovation for your
+			active life.
+		</p>
+
+		<app-button label="Shop Now" icon="icons/arrow-right.svg" />
+
+		<div class="mt-20 flex w-full flex-wrap items-start justify-start gap-16">
+			@for (stat of statistics; track stat.label) {
+				<div>
+					<p class="font-[palanquin] text-4xl font-bold">{{ stat.value }}</p>
+					<p class="font-[montserrat] leading-7 text-gray-500">
+						{{ stat.label }}
+					</p>
+				</div>
+			}
+		</div>
+	</div>
+
+	<div
+		class="relative flex flex-1 items-center justify-center bg-slate-300 max-xl:py-40 xl:min-h-screen"
+	>
+		<img
+			[src]="currentBigShoeImage()"
+			alt="shoe collection"
+			width="510"
+			height="502"
+			class="relative z-10 object-contain"
+		/>
+
+		<div
+			class="absolute -bottom-[5%] flex justify-center gap-4 max-sm:px-6 sm:left-[10%] sm:gap-6"
+		>
+			@for (shoe of shoes; track shoe.thumbnail; let idx = $index) {
+				<app-shoe-card
+					[thumbnail]="shoe.thumbnail"
+					[bigShoe]="shoe.bigShoe"
+					[(currentBigShoeImage)]="currentBigShoeImage"
+				/>
+			}
+		</div>
+	</div>
+</section>

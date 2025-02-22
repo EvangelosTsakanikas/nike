@@ -1,0 +1,13 @@
+<button
+	class="flex items-center justify-center gap-2 rounded-full border px-7 py-4 font-[montserrat] text-lg leading-none hover:border-red-500 hover:bg-red-500"
+	[ngClass]="currentClasses"
+>
+	{{ label() }}
+	@if (icon()) {
+		<img
+			[src]="icon()"
+			alt="arrow right icon"
+			class="ml-2 h-5 w-5 rounded-full"
+		/>
+	}
+</button>

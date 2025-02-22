@@ -1,0 +1,17 @@
+<div
+	class="w-full flex-1 rounded-[20px] px-10 py-16 shadow-2xl sm:w-[350px] sm:min-w-[350px]"
+>
+	<div
+		class="flex h-11 w-11 items-center justify-center rounded-full bg-red-400"
+	>
+		<img [src]="imgURL()" [alt]="label()" width="24" height="24" />
+	</div>
+	<h3 class="mt-5 font-[palanquin] text-3xl leading-normal font-bold">
+		{{ label() }}
+	</h3>
+	<p
+		class="mt-3 font-[montserrat] text-lg leading-normal break-words text-gray-400"
+	>
+		{{ subtext() }}
+	</p>
+</div>
